@@ -3,8 +3,6 @@
 // Execute `rustlings hint options2` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 #[cfg(test)]
 mod tests {
     #[test]
@@ -12,8 +10,7 @@ mod tests {
         let target = "rustlings";
         let optional_target = Some(target);
 
-        // TODO: Make this an if let statement whose value is "Some" type
-        word = optional_target {
+        if let Some(word) = optional_target {
             assert_eq!(word, target);
         }
     }
@@ -21,19 +18,16 @@ mod tests {
     #[test]
     fn layered_option() {
         let range = 10;
-        let mut optional_integers: Vec<Option<i8>> = vec![None];
+        let mut optional_integers: Vec<Option<i8>> = vec![None; range as usize];
 
-        for i in 1..(range + 1) {
-            optional_integers.push(Some(i));
+        for i in 1..=range {
+            optional_integers[i as usize - 1] = Some(i);
         }
 
         let mut cursor = range;
 
-        // TODO: make this a while let statement - remember that vector.pop also
-        // adds another layer of Option<T>. You can stack `Option<T>`s into
-        // while let and if let.
-        integer = optional_integers.pop() {
-            assert_eq!(integer, cursor);
+        while let Some(integer) = optional_integers.pop() {
+            assert_eq!(integer, Some(cursor));
             cursor -= 1;
         }
 

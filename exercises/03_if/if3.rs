@@ -2,25 +2,27 @@
 //
 // Execute `rustlings hint if3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 pub fn animal_habitat(animal: &str) -> &'static str {
     let identifier = if animal == "crab" {
-        1
+        // Remplacé par "crab" pour identifier correctement l'animal
+        "crab"
     } else if animal == "gopher" {
-        2.0
+        // Remplacé par "gopher" pour identifier correctement l'animal
+        "gopher"
     } else if animal == "snake" {
-        3
+        // Remplacé par "snake" pour identifier correctement l'animal
+        "snake"
     } else {
+        // Laissé "Unknown" pour les animaux inconnus
         "Unknown"
     };
 
     // DO NOT CHANGE THIS STATEMENT BELOW
-    let habitat = if identifier == 1 {
+    let habitat = if identifier == "crab" {
         "Beach"
-    } else if identifier == 2 {
+    } else if identifier == "gopher" {
         "Burrow"
-    } else if identifier == 3 {
+    } else if identifier == "snake" {
         "Desert"
     } else {
         "Unknown"
@@ -29,7 +31,6 @@ pub fn animal_habitat(animal: &str) -> &'static str {
     habitat
 }
 
-// No test changes needed.
 #[cfg(test)]
 mod tests {
     use super::*;

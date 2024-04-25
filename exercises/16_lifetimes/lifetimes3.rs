@@ -5,11 +5,10 @@
 // Execute `rustlings hint lifetimes3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
-struct Book {
-    author: &str,
-    title: &str,
+// Ajout d'un paramètre de durée de vie pour s'assurer que les références dans la struct ont une durée de vie valide
+struct Book<'a> {
+    author: &'a str,
+    title: &'a str,
 }
 
 fn main() {
